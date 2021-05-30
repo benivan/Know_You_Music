@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.aiden.knowyoumusic.databinding.FragmentGenreListBinding
 import com.aiden.knowyoumusic.model.GenreElement
 import com.aiden.knowyoumusic.utils.getJsonDataFromAsset
@@ -17,6 +16,12 @@ class GenreListFragment : Fragment() {
     private var _binding: FragmentGenreListBinding? = null
 
     private val binding get() = _binding!!
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
 
     override fun onCreateView(

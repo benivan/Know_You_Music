@@ -10,6 +10,20 @@
         android:id="@+id/genreListFragment"
         android:name="com.aiden.knowyoumusic.GenreListFragment"
         android:label="fragment_genre_list"
-        tools:layout="@layout/fragment_genre_list" />
+        tools:layout="@layout/fragment_genre_list" >
+        <action
+            android:id="@+id/action_genreListFragment_to_subGenreFragment"
+            app:destination="@id/subGenreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subGenreFragment"
+        android:name="com.aiden.knowyoumusic.SubGenreFragment"
+        android:label="sub_genre_fragment"
+        tools:layout="@layout/sub_genre_fragment" >
+        <argument
+            android:name="genre"
+            app:argType="string" />
+    </fragment>
+
 
 </navigation>
