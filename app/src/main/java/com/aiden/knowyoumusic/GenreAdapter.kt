@@ -5,11 +5,9 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.aiden.knowyoumusic.databinding.GenreItemViewBinding
-import com.aiden.knowyoumusic.databinding.ItemViewBinding
-import com.aiden.knowyoumusic.model.GenreElement
 
 class GenreAdapter(
-    private val genreList: List<GenreElement>
+    private val genreList: List<String>
 ) : RecyclerView.Adapter<GenreAdapter.GenreViewHolder>() {
 
 
@@ -30,8 +28,8 @@ class GenreAdapter(
 
     inner class GenreViewHolder(private val binding: GenreItemViewBinding) :
         RecyclerView.ViewHolder(binding.root){
-        fun bind(genre: GenreElement) {
-            binding.button.text = genre.name
+        fun bind(genre: String) {
+            binding.button.text = genre
             binding.button.setOnClickListener {
                 val action =  GenreListFragmentDirections.actionGenreListFragmentToSubGenreFragment(genre = binding.button.text.toString())
                 it.findNavController().navigate(action)

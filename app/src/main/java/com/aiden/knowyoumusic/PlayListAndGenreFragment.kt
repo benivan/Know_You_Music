@@ -3,9 +3,11 @@ package com.aiden.knowyoumusic
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,8 +35,8 @@ class PlayListAndGenreFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvSongList.layoutManager = LinearLayoutManager(context)
         binding.rvSongList.adapter = GenrePlayListAdapter(args.subGenrePlayList.songlist)
-        binding.tvGenreDescription.text = args.subGenrePlayList.description
-        binding.tvGenreName.text = args.subGenrePlayList.name
+        binding.tvGenreDescription.text = HtmlCompat.fromHtml(args.subGenrePlayList.description,0)
+        binding.tvGenreName.text = args.subGenrePlayList.name.replace("<.*?>".toRegex(), "")
         onYoutubeButtonClick()
         onSpotifyButtonClick()
 

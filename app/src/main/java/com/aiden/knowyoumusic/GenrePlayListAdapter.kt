@@ -27,7 +27,7 @@ class GenrePlayListAdapter(private val songList: List<String>):
 
     inner  class GenrePlayListViewHolder(private val binding: SongItemViewBinding) :RecyclerView.ViewHolder(binding.root) {
         fun bind(currentItem: String) {
-            binding.songItem.text = currentItem
+            binding.songItem.text = currentItem.replace("<.*?>".toRegex(), "")
         }
 
     }
