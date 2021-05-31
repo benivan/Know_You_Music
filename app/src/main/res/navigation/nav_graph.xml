@@ -23,6 +23,19 @@
         <argument
             android:name="genre"
             app:argType="string" />
+        <action
+            android:id="@+id/action_subGenreFragment_to_playListAndGenreFragment2"
+            app:destination="@id/playListAndGenreFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/playListAndGenreFragment2"
+        android:name="com.aiden.knowyoumusic.PlayListAndGenreFragment"
+        android:label="genre_detail_playlist"
+        tools:layout="@layout/genre_detail_playlist" >
+
+        <argument
+            android:name="subGenrePlayList"
+            app:argType="com.aiden.knowyoumusic.model.Genrelist" />
     </fragment>
 
 
