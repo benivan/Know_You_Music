@@ -2,7 +2,6 @@ package com.aiden.knowyoumusic
 
 
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
